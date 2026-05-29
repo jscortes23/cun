@@ -27,6 +27,18 @@ services:
     volumes:
       - mysql8_data:/var/lib/mysql
 
+  oracle18:
+    image: gvenzl/oracle-xe:18-full
+    container_name: oracle18
+    restart: unless-stopped
+    environment:
+      ORACLE_PASSWORD: ${ORACLE_PASSWORD}
+    ports:
+      - "1521:1521"
+    volumes:
+      - oracle18_data:/opt/oracle/oradata
+
 volumes:
   pg13_data:
   mysql8_data:
+  oracle18_data:
