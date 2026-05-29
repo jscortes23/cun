@@ -1,0 +1,17 @@
+services:
+
+  postgres13:
+    image: postgres:13.21
+    container_name: postgres13
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: ${PG13_PASSWORD}
+      POSTGRES_DB: testpostgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg13_data:/var/lib/postgresql/data
+
+volumes:
+  pg13_data:
