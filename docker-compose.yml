@@ -3,6 +3,7 @@ services:
   postgres13:
     image: postgres:13.21
     container_name: postgres13
+    profiles:  ["pg", "postgres", "all"]
     restart: unless-stopped
     environment:
       POSTGRES_USER: admin
@@ -16,6 +17,7 @@ services:
   mysql8:
     image: mysql:8.4
     container_name: mysql8
+    profiles: ["mysql", "all"]
     restart: unless-stopped
     environment:
      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -30,6 +32,7 @@ services:
   oracle18:
     image: gvenzl/oracle-xe:18-full
     container_name: oracle18
+    profiles: ["orl", "orc", "oracle", "all"]
     restart: unless-stopped
     environment:
       ORACLE_PASSWORD: ${ORACLE_PASSWORD}
