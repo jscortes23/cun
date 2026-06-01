@@ -1,5 +1,17 @@
 # Configuración en DBeaver
 
+>[!IMPORTANT]
+>Puedes correr las gestores de bases de datos por separado usando los ``--profile name``
+
+| Base de datos | Perfiles | Comando |
+| ------------- | ------- | -------- |
+| **Postgres** | ``pg`` o ``postgres`` | ``docker compose --profile postgres up -d`` |
+| **My SQL** | ``mysql`` | ``docker compose --profile mysql up -d`` |
+| **Oracle 18** | ``orl`` o ``orc`` o ``oracle`` | ``docker compose --profile orc up -d`` |
+| **Correr todas** | ``all`` | ``docker compose --profile all up -d`` |
+
+----
+
 >[!NOTE]
 >los Username se pueden modificar desde el ``docker-compose.yml``
 >Ademas en todos las configuraciones de debe hacer **Test Connection** e instalar los driver que solicita ``DBeaver``
@@ -12,7 +24,7 @@ El password que pongas en ``DBeaver`` de ser igual al ``PG13_PASSWORD`` del ``.e
 
 ----
 
-#**MYSQL**
+# **MYSQL**
 
  El password que pongas en ``DBeaver`` de ser igual al ``MYSQL_PASSWORD`` del ``.env``. Adcional a esto en ``DBeaver`` debe ir a la pestaña **Driver properties** y modificar los siguiente:
 
